@@ -28,9 +28,9 @@ CREATE TABLE `users` (
   `last_name` varchar(50) DEFAULT NULL,
   `email` varchar(30) DEFAULT NULL,
   `password` varchar(30) DEFAULT NULL,
-  `low_risk` int DEFAULT NULL,
+  `high_risk` int DEFAULT NULL,
   `medium_risk` int DEFAULT NULL,
-  `high` int DEFAULT NULL,    
+  `low_risk` int DEFAULT NULL,    
   PRIMARY KEY (`user_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -43,22 +43,22 @@ LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 INSERT INTO `users` VALUES
 (1, 'Tony', 'Tan', 'ttan@cloudflare.com', '7U1QTUpJjOn', 50, 0, 50),
-(2, 'Franky', 'Sauvain', 'fsauvain1@samsung.com', 'UM9FH6v', 75, 0, 25),
+(2, 'Franky', 'Sauvain', 'fsauvain1@samsung.com', 'UM9FH6v', 25, 0, 75),
 (3, 'Timmie', 'Kensington', 'tkensington2@earthlink.net', 'mHaNs2pS4r', 55, 0, 45),
-(4, 'Dita', 'Cartmail', 'dcartmail7@ucoz.ru', 'WTZBvYoY', 70, 0, 30),
-(5, 'Randie', 'Goldsworthy', 'rgoldsworthy8@springer.com', 'DF9lyQu', 65, 0, 35),
-(6, 'Lesley', 'Filipyev', 'lfilipyev9@dot.gov', 'lK7K1HqJq', 85, 0, 15);
+(4, 'Dita', 'Cartmail', 'dcartmail7@ucoz.ru', 'WTZBvYoY', 30, 0, 70),
+(5, 'Randie', 'Goldsworthy', 'rgoldsworthy8@springer.com', 'DF9lyQu', 60, 0, 40),
+(6, 'Lesley', 'Filipyev', 'lfilipyev9@dot.gov', 'lK7K1HqJq', 10, 0, 90);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `stock_records`
+-- Table structure for table `stock-records`
 --
 
-DROP TABLE IF EXISTS `stock_records`;
+DROP TABLE IF EXISTS `stock-records`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `stock_records` (
+CREATE TABLE `stock-records` (
   `srecord_id` int NOT NULL AUTO_INCREMENT,
   `user_id` int DEFAULT NULL,
   `exchange_code` varchar(10) DEFAULT NULL,
@@ -71,12 +71,12 @@ CREATE TABLE `stock_records` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `stock_records`
+-- Dumping data for table `stock-records`
 --
 
-LOCK TABLES `stock_records` WRITE;
-/*!40000 ALTER TABLE `stock_records` DISABLE KEYS */;
-INSERT INTO `stock_records` VALUES
+LOCK TABLES `stock-records` WRITE;
+/*!40000 ALTER TABLE `stock-records` DISABLE KEYS */;
+INSERT INTO `stock-records` VALUES
 (1,1,'SES','D05',1000,29.50,29.90),
 (2,1,'SES','E5H',25000,0.20,0.22),
 (3,2,'SES','S51',10000,0.12,0.12),
@@ -87,17 +87,17 @@ INSERT INTO `stock_records` VALUES
 (8,1,'SES','S51',15000,0.13,0.12),
 (9,3,'SES','E5H',15000,0.25,0.22),
 (10,1,'SES','BSL',6000,1.25,1.16);
-/*!40000 ALTER TABLE `stock_records` ENABLE KEYS */;
+/*!40000 ALTER TABLE `stock-records` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `deposit_records`
+-- Table structure for table `deposit-records`
 --
 
-DROP TABLE IF EXISTS `deposit_records`;
+DROP TABLE IF EXISTS `deposit-records`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `deposit_records` (
+CREATE TABLE `deposit-records` (
   `drecord_id` int NOT NULL AUTO_INCREMENT,
   `user_id` int DEFAULT NULL,
   `bank_name` varchar(10) DEFAULT NULL,
@@ -109,12 +109,12 @@ CREATE TABLE `deposit_records` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `desposit_records`
+-- Dumping data for table `desposit-records`
 --
 
-LOCK TABLES `deposit_records` WRITE;
-/*!40000 ALTER TABLE `deposit_records` DISABLE KEYS */;
-INSERT INTO `deposit_records` VALUES
+LOCK TABLES `deposit-records` WRITE;
+/*!40000 ALTER TABLE `deposit-records` DISABLE KEYS */;
+INSERT INTO `deposit-records` VALUES
 (1,1,'DBS','Savings Account',50000.00,0.05),
 (2,1,'OCBC','Savings Account',10000.00,0.05),
 (3,2,'UOB','Savings Account',20000.00,0.05),
@@ -127,5 +127,5 @@ INSERT INTO `deposit_records` VALUES
 (10,6,'HSBC','Savings Account',30000.00,0.25),
 (11,5,'Citibank','Savings Account',50000.00,0.50),
 (12,4,'OCBC','Current Account',0.00,0.00);
-/*!40000 ALTER TABLE `deposit_records` ENABLE KEYS */;
+/*!40000 ALTER TABLE `deposit-records` ENABLE KEYS */;
 UNLOCK TABLES;
