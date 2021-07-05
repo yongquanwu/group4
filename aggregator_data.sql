@@ -52,31 +52,31 @@ INSERT INTO `users` VALUES
 UNLOCK TABLES;
 
 --
--- Table structure for table `stock-records`
+-- Table structure for table `stock_records`
 --
 
-DROP TABLE IF EXISTS `stock-records`;
+DROP TABLE IF EXISTS `stock_records`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `stock-records` (
+CREATE TABLE `stock_records` (
   `srecord_id` int NOT NULL AUTO_INCREMENT,
   `user_id` int DEFAULT NULL,
   `exchange_code` varchar(10) DEFAULT NULL,
   `stock_code` varchar(10) DEFAULT NULL,
   `no_of_shares` int DEFAULT NULL,
   `purchase_cost` double DEFAULT NULL,
-  `market_price` double DEFAULT NULL, 
+  `current_price` double DEFAULT NULL, 
   PRIMARY KEY (`srecord_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `stock-records`
+-- Dumping data for table `stock_records`
 --
 
-LOCK TABLES `stock-records` WRITE;
-/*!40000 ALTER TABLE `stock-records` DISABLE KEYS */;
-INSERT INTO `stock-records` VALUES
+LOCK TABLES `stock_records` WRITE;
+/*!40000 ALTER TABLE `stock_records` DISABLE KEYS */;
+INSERT INTO `stock_records` VALUES
 (1,1,'SES','D05',1000,29.50,29.90),
 (2,1,'SES','E5H',25000,0.20,0.22),
 (3,2,'SES','S51',10000,0.12,0.12),
@@ -87,34 +87,34 @@ INSERT INTO `stock-records` VALUES
 (8,1,'SES','S51',15000,0.13,0.12),
 (9,3,'SES','E5H',15000,0.25,0.22),
 (10,1,'SES','BSL',6000,1.25,1.16);
-/*!40000 ALTER TABLE `stock-records` ENABLE KEYS */;
+/*!40000 ALTER TABLE `stock_records` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `deposit-records`
+-- Table structure for table `deposit_records`
 --
 
-DROP TABLE IF EXISTS `deposit-records`;
+DROP TABLE IF EXISTS `deposit_records`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `deposit-records` (
+CREATE TABLE `deposit_records` (
   `drecord_id` int NOT NULL AUTO_INCREMENT,
   `user_id` int DEFAULT NULL,
   `bank_name` varchar(10) DEFAULT NULL,
   `deposit_type` varchar(10) DEFAULT NULL,
-  `deposit_amount` double DEFAULT NULL,
+  `deposit_amt` double DEFAULT NULL,
   `interest_rate` double DEFAULT NULL,
   PRIMARY KEY (`drecord_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `desposit-records`
+-- Dumping data for table `desposit_records`
 --
 
-LOCK TABLES `deposit-records` WRITE;
-/*!40000 ALTER TABLE `deposit-records` DISABLE KEYS */;
-INSERT INTO `deposit-records` VALUES
+LOCK TABLES `deposit_records` WRITE;
+/*!40000 ALTER TABLE `deposit_records` DISABLE KEYS */;
+INSERT INTO `deposit_records` VALUES
 (1,1,'DBS','Savings Account',50000.00,0.05),
 (2,1,'OCBC','Savings Account',10000.00,0.05),
 (3,2,'UOB','Savings Account',20000.00,0.05),
@@ -127,5 +127,5 @@ INSERT INTO `deposit-records` VALUES
 (10,6,'HSBC','Savings Account',30000.00,0.25),
 (11,5,'Citibank','Savings Account',50000.00,0.50),
 (12,4,'OCBC','Current Account',0.00,0.00);
-/*!40000 ALTER TABLE `deposit-records` ENABLE KEYS */;
+/*!40000 ALTER TABLE `deposit_records` ENABLE KEYS */;
 UNLOCK TABLES;
