@@ -122,7 +122,7 @@ INSERT INTO `deposit_records` VALUES
 (5,2,'Stanchart','Fixed Deposit',100000.00,0.80),
 (6,3,'DBS','Savings Account',30000.00,0.05),
 (7,4,'OCBC','Savings Account',50000.00,0.05),
-(8,1,'DBS','Current Account',0.00,0.00),
+(8,3,'DBS','Current Account',0.00,0.00),
 (9,2,'UOB','Current Account',0.00,0.00),
 (10,6,'HSBC','Savings Account',30000.00,0.25),
 (11,5,'Citibank','Savings Account',50000.00,0.50),
