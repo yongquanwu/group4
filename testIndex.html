@@ -23,21 +23,28 @@
 
 <body>
 <div>
-    <H1> Fetch user stock & deposit holdings from database using API into table</H1>
-    <h2> Note: Start the backend server first using node main.js </h2>
-    <h4> For stocks, display one line for each stock holding incl. calculated value & pnl & a final line for total stocks</h4>
-    <h4> For deposits, display one line for each deposit holding & a final line for total deposits </h4>
+    <H1> G4 NUS Money </H1>
+    <h2> Roboaggregator </h2>
+    <h4> Find out your portfolio risk profile in real-time </h4>
 </div>
 
 <br>
-
-<button class="btn btn-info" onclick="getStocksByUserID()">Display user stocks in table</button>
-<button class="btn btn-info" onclick="getDepositsByUserID()">Display user bank accounts in table</button>
-<button class="btn btn-info" onclick="getStocksAndDepositsByUserID()">Display user stocks & bank accounts in table</button>
+Login: <input type="text" id="paramId"/>
 <br>
-Enter User ID: <input type="text" id="paramId"/>
+
+<br>
+<button class="btn btn-info" onclick="getUsersByUserID()">Login</button>
+<button class="btn btn-info" onclick="getStocksAndDepositsByUserID()">Stock Holdings & Deposit Balances</button>
+<button class="btn btn-info" onclick="Riskcal()">Portfolio Risk Evaluation</button>
+<br>
+
+<div class="user1"></div>
+<br>
 <div class="mypanel"></div>
 <br>
 <div class="mypanel1"></div>
+<br>
+<div class="mypanel2"></div>
 
 </body>
+
