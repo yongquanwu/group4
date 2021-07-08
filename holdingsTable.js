@@ -84,8 +84,8 @@ function getStocksByUserID() {
                       <td>${item.no_of_shares}</td>
                       <td>${item.purchase_cost}</td>
                       <td>${item.current_price}</td>
-                      <td>${item.no_of_shares*item.current_price}</td>
-                      <td>${item.no_of_shares*(item.current_price-item.purchase_cost)}</td>
+                      <td>${(item.no_of_shares*item.current_price).toFixed(2)}</td>
+                      <td>${(item.no_of_shares*(item.current_price-item.purchase_cost)).toFixed(2)}</td>
                     </tr>`;
                 TotalValue += Value;
                 TotalPNL += PNL;
@@ -98,7 +98,7 @@ function getStocksByUserID() {
               <td></td>
               <td></td>
               <td>${TotalValue}</td>
-              <td>${TotalPNL}</td>
+              <td>${(TotalPNL).toFixed(2)}</td>
             </tr>`;            
             text += "</table>";
             $(".mypanel").html(text);
@@ -162,5 +162,11 @@ function getStocksAndDepositsByUserID() {
   getStocksByUserID();
   getDepositsByUserID();
   $(".mypanel2").html("");
+}
+
+function getRiskcal() {
+  Riskcal();
+  $(".mypanel1").html("");  
+  $(".mypanel").html("");
 }
 

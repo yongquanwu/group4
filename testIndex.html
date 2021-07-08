@@ -9,6 +9,7 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+     <link href="style.css" rel="stylesheet" type="text/css" />     
     <style>
         table,
         th,
@@ -24,18 +25,18 @@
 <body>
 <div>
     <H1> G4 NUS Money </H1>
-    <h2> Roboaggregator </h2>
+    <h2> Robo-Aggregator </h2>
     <h4> Find out your portfolio risk profile in real-time </h4>
 </div>
 
 <br>
-Login: <input type="text" id="paramId"/>
+Username: <input type="text" id="paramId"/>
 <br>
 
 <br>
 <button class="btn btn-info" onclick="getUsersByUserID()">Login</button>
 <button class="btn btn-info" onclick="getStocksAndDepositsByUserID()">Stock Holdings & Deposit Balances</button>
-<button class="btn btn-info" onclick="Riskcal()">Portfolio Risk Evaluation</button>
+<button class="btn btn-info" onclick="getRiskcal()">Portfolio Risk Evaluation</button>
 <br>
 
 <div class="user1"></div>
@@ -45,6 +46,7 @@ Login: <input type="text" id="paramId"/>
 <div class="mypanel1"></div>
 <br>
 <div class="mypanel2"></div>
+
 
 </body>
 
