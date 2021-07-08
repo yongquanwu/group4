@@ -46,6 +46,20 @@ router.get("/deposit_records/by-user-id", (request, response) => {
   );
 });
 
+router.put("/users/by-user-id", (request, response) => {
+  database.connection.query(
+    `update users set high_risk = '${request.body.high_risk}', medium_risk = '${request.body.medium_risk}', low_risk = '${request.body.low_risk}' where user_id = ${request.body.user_id}`,
+    (error, result) => {
+      if (error) {
+        console.log(error);
+        response.status(500).send("Some error occurred at the Backend.");
+      } else {
+        response.status(200).send("Updated successfully!");
+      }
+    }
+  );
+});
+
 module.exports = {
   router,
 };
